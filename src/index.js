@@ -13,6 +13,7 @@ import App from './App';
 import Palabras from "./components/pages/Palabras"
 import Expresiones from "./components/pages/Expresiones"
 import AñadirPalabras from './components/pages/AñadirPalabras';
+import AñadirExpresion from './components/pages/AñadirExpresion';
 
 
 
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route path="palabras" element={<Palabras />} />
         <Route path="expresiones" element={<Expresiones />} />
         <Route path="añadir-palabra" element={<AñadirPalabras />} />
+        <Route path="añadir-expresion" element={<AñadirExpresion />} />
 
       </Route>
     </Routes>

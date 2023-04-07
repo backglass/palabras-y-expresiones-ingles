@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 
 import BasicCard from '../BasicCard/BasicCard';
 
-const pages = ['Palabras', 'Expresiones', "Añadir-Palabra"];
+const pages = ['Palabras', 'Expresiones', "Añadir-Palabra","Añadir-Expresion"];
 
 function NavBar() {
   const navigate = useNavigate();
