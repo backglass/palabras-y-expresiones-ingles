@@ -49,6 +49,7 @@ const AñadirCard = () => {
             name="palabra"
             value={palabra}
             onChange={(event) => setPalabra(event.target.value)}
+
           />
           <Box sx={{ height: 16 }} />
           <TextField
@@ -58,6 +59,12 @@ const AñadirCard = () => {
             name="significado"
             value={significado}
             onChange={(event) => setSignificado(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter') {
+                handleSubmit(event);
+                document.getElementsByName('palabra')[0].focus();
+              }
+            }}
           />
         </Box> 
       </CardContent>
@@ -65,7 +72,7 @@ const AñadirCard = () => {
       <CardActions>
         <Box sx={{ display: 'flex', justifyContent: "space-around", alignItems: "center", width: '100%' }}>
           <Button size="small" variant="contained" onClick={handleSubmit}>
-            Check
+            Enviar
           </Button>
           {mensaje && <Typography variant="subtitle1">{mensaje}</Typography>}
         </Box>
