@@ -1,22 +1,32 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 
-import TextField from '@mui/material/TextField';
+
+
 import { useState } from 'react';
 
 import { useRef } from 'react'; // Importamos el hook useRef para poder limpiar el input
-import { IconButton } from '@mui/material';
 
-import RefreshIcon from '@mui/icons-material/Refresh';
-import SearchIcon from '@mui/icons-material/Search';
+
+
 import Box from '@mui/material/Box';
 
 import ExpresionPalabra from './ExpresionPalabra'; // Importamos el componente que muestra la palabra
 import ExpresionBoton from './ExpresionBoton'; // Importamos el componente que muestra el boton
 import { useEffect } from 'react';
 import axios from 'axios';
+
+
+/* Este código define un componente de React llamado ExpresionCard que muestra una tarjeta con una palabra en español y tres botones, uno de ellos es la palabra correcta y los otros dos son palabras
+aleatorias diferentes a la correcta. Cuando se hace clic en uno de los botones, el componente 
+cambia el color del botón a "success" si es que la respuesta dada fue correcta.
+
+
+El componente utiliza dos hook de React, useState y useRef, y también importa varios componentes de
+Material-UI como Card, CardContent y CardActions. Además, también utiliza useEffect para realizar una
+petición HTTP a un servidor local y obtener una lista de expresiones y sus significados para crear
+un diccionario que se utiliza más adelante para mostrar las palabras en la tarjeta. */
 
 const ExpresionCard = () => {
   const [diccionario, setDiccionario] = useState({}); // Estado para guardar el diccionario

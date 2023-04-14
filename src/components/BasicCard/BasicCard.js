@@ -14,6 +14,20 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 
+/* Este código es un componente de React que muestra una tarjeta con una palabra aleatoria y un cuadro de
+entrada para que el usuario adivine el significado de la palabra. Algunas de las funcionalidades del
+componente incluyen: 
+
+- Obtener una palabra aleatoria y su significado de una API.
+
+- Comprobar si la palabra que ingresó el usuario es correcta o incorrecta.
+
+- Limpiar el cuadro de entrada después de que el usuario haya intentado adivinar el significado de la palabra.
+
+- Controlar el estado de la palabra oculta y mostrarla en caso de ser necesario. 
+
+- Renderizar nuevamente el componente y obtener una nueva palabra aleatoria. */
+
 
 const BasicCard = () => {
 // Esta sección del código define los estados iniciales de la aplicación. 
