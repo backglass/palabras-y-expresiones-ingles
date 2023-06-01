@@ -1,7 +1,7 @@
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-
+import Footer from '../Footer/Footer';
 
 
 import { useState } from 'react';
@@ -35,7 +35,7 @@ const ExpresionCard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('http://127.0.0.1:8000/expresiones/all');
+      const result = await axios.get('https://185.117.44.54:8000/expresiones/all');
       const nuevoDiccionario = {};
       result.data.forEach(item => {
         nuevoDiccionario[item.expresion] = item.significado;
