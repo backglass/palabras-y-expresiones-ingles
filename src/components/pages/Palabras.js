@@ -20,6 +20,9 @@ import BasicCard from '../BasicCard/BasicCard';
 import { margin } from '@mui/system';
 import Footer from '../Footer/Footer';
 
+import { IconButton } from '@mui/material';
+import RefreshIcon from '@mui/icons-material/Refresh';
+
 
 
 function Copyright() {
@@ -90,25 +93,19 @@ function Palabras() {
             <BasicCard />
      
           </Grid>
-         
+          <Grid container justifyContent="center">
+          {/* Recarga la página y el scroll se pone al principio */}
+          <IconButton sx={{ mt: 2, mb: 2,fontSize: '20rem'}} onClick={() => {
+            window.location.reload();
+            window.scrollTo(0,0);
+          }}>             
+              <RefreshIcon />
+            </IconButton>
+          </Grid>
         </Container>
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-      {/* End footer */}
+      <Footer />
     </ThemeProvider>
   );
 }

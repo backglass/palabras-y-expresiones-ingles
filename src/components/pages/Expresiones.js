@@ -18,6 +18,8 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ExpresionCard from '../ExpresionCard/ExpresionCard';
 import Footer from '../Footer/Footer';
+import { IconButton } from '@mui/material';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 
 
@@ -92,7 +94,15 @@ function Expresiones() {
             </Grid>
      
           </Grid>
-         
+          <Grid container justifyContent="center">
+          {/* Recarga la página y el scroll se pone al principio */}
+          <IconButton sx={{ mt: 2, mb: 2,fontSize: '20rem'}} onClick={() => {
+            window.location.reload();
+            window.scrollTo(0,0);
+          }}>             
+              <RefreshIcon />
+            </IconButton>
+          </Grid>
         </Container>
       </main>
       {/* Footer */}
