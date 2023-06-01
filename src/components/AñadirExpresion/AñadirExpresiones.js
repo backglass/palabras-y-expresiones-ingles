@@ -15,7 +15,7 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 
 const enviarDatos = (expresion, significado) => {
-  return axios.post('http://127.0.0.1:8000/expresiones/nueva', { expresion, significado });
+  return axios.post('https://185.117.44.54:8000/expresiones/nueva', { expresion, significado });
 }
 
 const AñadirExpresiones = () => {
