@@ -37,7 +37,7 @@ mensajes de éxito / error. */
 
 // función para hacer una petición POST con axios
 const enviarDatos = (palabra, significado) => {
-  return axios.post('http://127.0.0.1:8000/palabras/nueva', { palabra, significado });
+  return axios.post('https://185.117.44.54:8000/palabras/nueva', { palabra, significado });
 }
 
 // componente AñadirCard
