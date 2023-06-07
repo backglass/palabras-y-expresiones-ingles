@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 
 import { Outlet } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-
+import ButtonMenuApp from './components/ButtonMenuApp/ButtonMenuPalabras';
 
 function App() {
 
@@ -23,7 +23,10 @@ function App() {
 
     <div>
       <NavBar />
+        
       <Outlet />
+
+      
     </div>
 
       
