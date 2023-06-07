@@ -28,14 +28,14 @@ Material-UI como Card, CardContent y CardActions. Además, también utiliza useE
 petición HTTP a un servidor local y obtener una lista de expresiones y sus significados para crear
 un diccionario que se utiliza más adelante para mostrar las palabras en la tarjeta. */
 
-const ExpresionCard = () => {
+const ExpresionCard = ({ id }) => {
   const [diccionario, setDiccionario] = useState({}); // Estado para guardar el diccionario
   const [expresion, setExpresion] = useState(''); // Estado para guardar la expresión aleatoria
   const [colorBoton, setColorBoton] = useState('primary');
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('https://185.117.44.54:8000/expresiones/all');
+      const result = await axios.get(`https://127.0.0.1:8000/expresiones/${id}`);
       const nuevoDiccionario = {};
       result.data.forEach(item => {
         nuevoDiccionario[item.expresion] = item.significado;
