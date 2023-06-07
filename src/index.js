@@ -10,13 +10,17 @@ import Palabras from "./components/pages/Palabras"
 import Expresiones from "./components/pages/Expresiones"
 import AñadirPalabras from './components/pages/AñadirPalabras';
 import AñadirExpresion from './components/pages/AñadirExpresion';
+import MenuPalabras from './components/pages/MenuPalabras';
+import MenuExpresiones from './components/pages/MenuExpresiones';
 
 ReactDOM.render(
   <HashRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="palabras" element={<Palabras />} />
-        <Route path="expresiones" element={<Expresiones />} />
+        <Route path="/palabras/:id" element={<Palabras />} />
+        <Route path="palabras" element={<MenuPalabras />} />
+        <Route path="expresiones" element={<MenuExpresiones />} />
+        <Route path="/expresiones/:id" element={<Expresiones />} />
         <Route path="añadir-palabra" element={<AñadirPalabras />} />
         <Route path="añadir-expresion" element={<AñadirExpresion />} />
       </Route>
