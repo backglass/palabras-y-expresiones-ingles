@@ -1,31 +1,26 @@
 
+/* Se trata de un componente de React que utiliza el componente BasicCard para mostrar tarjetas de estudio
+dinámicamente, en base a la lección seleccionada en el parámetro de la URL "id". Incluye un botón
+de actualización para volver a la parte superior de la página. */
+
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import CameraIcon from '@mui/icons-material/PhotoCamera';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import BasicCard from '../BasicCard/BasicCard';
-import { margin } from '@mui/system';
 import Footer from '../Footer/Footer';
 
 import { IconButton } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
-
-
+import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 function Copyright() {
+
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
@@ -41,8 +36,28 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-function Palabras() {
 
+function Palabras() {
+//* Esté parametro se pasa desde el componente ButtonMenuApp.js
+//* Obtenemos el valor del parámetro "id" de la URL que sera lección 1, 2 o 3 etc
+//* Dependiendo del valor de "id" se muestran las palabras de la lección correspondiente
+//* Si el valor es 2 se muestran las palabras de la lección 2
+
+  const { id } = useParams(); // Obtener el valor del parámetro "id"
+  console.log(id);
+  let [leccion, setLeccion] = useState(id); // Se inicializa el estado con el valor del parámetro "id"
+ 
+  // Si el parámetro es "Lección 1" se cambia a "all" para que se muestren todas las palabras
+  if (leccion === "Lección 1") {
+    leccion = "1";
+  }
+  if (leccion === "Lección 2") {
+    leccion = "2";
+  }
+  if (leccion === "Lección 3") {
+    leccion = "3";
+  }
+  
   
   return (
     <ThemeProvider theme={theme}>
@@ -66,7 +81,7 @@ function Palabras() {
               color="text.primary"
               gutterBottom
             >
-              Palabras
+              {id}
             </Typography>
   
           </Container>
@@ -76,21 +91,21 @@ function Palabras() {
           
           <Grid container>
             <Grid item xs={12} sm={6} md={4}>
-            <BasicCard sx={{padding: "30px"}}/>
+            <BasicCard id ={leccion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <BasicCard sx={{padding: "30px"}}/>
+            <BasicCard id = {leccion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <BasicCard sx={{padding: "30px"}}/>
+            <BasicCard id = {leccion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <BasicCard sx={{padding: "30px"}}/>
+            <BasicCard id = {leccion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <BasicCard sx={{padding: "30px"}}/>
+            <BasicCard id = {leccion} sx={{padding: "30px"}}/>
             </Grid>
-            <BasicCard />
+            <BasicCard id = {leccion} sx={{padding: "30px"}}/>
      
           </Grid>
           <Grid container justifyContent="center">
