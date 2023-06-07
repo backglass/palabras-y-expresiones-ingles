@@ -12,7 +12,8 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 import SearchIcon from '@mui/icons-material/Search';
 import Box from '@mui/material/Box';
 
-const BasicCard = () => {
+
+const BasicCard = ({id}) => {
   const [palabra, setPalabra] = useState("hola"); // Establece la palabra inicial como "hola"
   const [palabraOculta, setPalabraOculta] = useState(false); // Establece el estado de la palabra oculta como falso
   const [palabraCorrecta, setPalabraCorrecta] = useState(false); // Establece el estado de la palabra correcta como falso
@@ -21,13 +22,14 @@ const BasicCard = () => {
   const buttonRef = useRef(null); // Crea un ref para el botón
   const [randomData, setRandomData] = useState({});
 
+
   const handleRender = (event) => {
     setReload(!reload);
     inputRef.current.value = ""; // Limpia el input con el hook useRef, toma la referencia del input y le asigna un valor vacío
   };
 
   useEffect(() => {
-    const url = 'https://185.117.44.54:8000/palabras/all';
+    const url = `https://127.0.0.1:8000/palabras/leccion/${id}`;
     const dataObj = {};
 
     fetch(url, { rejectUnauthorized: false })
