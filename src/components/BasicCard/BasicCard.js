@@ -29,7 +29,7 @@ const BasicCard = ({id}) => {
   };
 
   useEffect(() => {
-    const url = `https://127.0.0.1:8000/palabras/leccion/${id}`;
+    const url = `https://185.117.44.54:8000/palabras/leccion/${id}`;
     const dataObj = {};
 
     fetch(url, { rejectUnauthorized: false })
