@@ -35,7 +35,7 @@ const ExpresionCard = ({ id }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`https://127.0.0.1:8000/expresiones/${id}`);
+      const result = await axios.get(`https://185.117.44.54:8000/expresiones/leccion/${id}`); // Se hace una petición usando el id de la lección
       const nuevoDiccionario = {};
       result.data.forEach(item => {
         nuevoDiccionario[item.expresion] = item.significado;
