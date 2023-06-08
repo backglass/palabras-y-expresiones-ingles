@@ -30,13 +30,13 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
 function Expresiones() {
   const { id } = useParams(); // Obtener el valor del parámetro "id"
   console.log(id);
+
   let [expresion, setExpresion] = useState(id); // Se inicializa el estado con el valor del parámetro "id"
  
   // Si el parámetro es "Lección 1" se cambia a "all" para que se muestren todas las palabras
@@ -45,10 +45,19 @@ function Expresiones() {
   }
   if (expresion === "Expresión 2") {
     expresion = "2";
+    
   }
   if (expresion === "Expresión 3") {
     expresion = "3";
+    
   }
+  if (expresion === "Expresión 4") {
+    expresion = "4";
+  }
+  if (expresion === "Expresión 5") {
+    expresion = "5";
+  }
+
   console.log(expresion);
   return (
     <ThemeProvider theme={theme}>
@@ -82,22 +91,22 @@ function Expresiones() {
           
           <Grid container>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-            <ExpresionCard id ={"all"} sx={{padding: "30px"}}/>
+            <ExpresionCard id ={expresion} sx={{padding: "30px"}}/>
             </Grid>
      
           </Grid>
