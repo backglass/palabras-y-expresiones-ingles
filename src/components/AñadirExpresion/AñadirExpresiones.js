@@ -14,22 +14,26 @@ import Typography from '@mui/material/Typography';
 
 import axios from 'axios';
 
-const enviarDatos = (expresion, significado) => {
-  return axios.post('https://185.117.44.54:8000/expresiones/nueva', { expresion, significado });
+const enviarDatos = (expresion, significado,leccion) => {
+
+  //return axios.post('https://127.0.0.1:8000/expresiones/nueva', { expresion, significado, leccion });
+  return axios.post('https://185.117.44.54:8000/expresiones/nueva', { expresion, significado, leccion });
 }
 
 const AñadirExpresiones = () => {
   const [expresion, setexpresion] = useState('');
   const [significado, setSignificado] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [leccion, setLeccion] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    enviarDatos(expresion, significado)
+    enviarDatos(expresion, significado,leccion)
       .then(() => {
         setMensaje('Expresion añadida');
         setexpresion('');
         setSignificado('');
+        setLeccion('');
       })
       .catch(error => {
         console.error(error);
