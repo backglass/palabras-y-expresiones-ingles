@@ -36,8 +36,8 @@ mensajes de éxito / error. */
 
 
 // función para hacer una petición POST con axios
-const enviarDatos = (palabra, significado) => {
-  return axios.post('https://185.117.44.54:8000/palabras/nueva', { palabra, significado });
+const enviarDatos = (palabra, significado, leccion) => {
+  return axios.post('https://185.117.44.54:8000/palabras/nueva', { palabra, significado, leccion });
 }
 
 // componente AñadirCard
@@ -45,19 +45,29 @@ const AñadirCard = () => {
   // estados de las variables palabra, significado y mensaje
   const [palabra, setPalabra] = useState('');
   const [significado, setSignificado] = useState('');
+  const [leccion, setLeccion] = useState('');
   const [mensaje, setMensaje] = useState('');
 
   // función para manejar el envío del formulario
   const handleSubmit = (event) => {
     event.preventDefault(); // prevenir comportamiento por defecto del formulario
-    enviarDatos(palabra, significado)
+    
+    // Validar campos obligatorios
+    if(!palabra || !significado){
+      setMensaje('Error: Por favor ingrese una palabra y su significado')
+      return
+    }
+
+    enviarDatos(palabra, significado, leccion)
       .then(() => {
         setMensaje('Palabra añadida');
         setPalabra('');
         setSignificado('');
+        setLeccion('');
       })
       .catch(error => {
         console.error(error);
+        setMensaje('Error al enviar los datos');
       });
   }
 
