@@ -69,6 +69,9 @@ function Palabras() {
   if (leccion === "Lección 7") {
     leccion = "7";
   }
+  if (leccion === "Lección 8") {
+    leccion = "8";
+  }
   
   return (
     <ThemeProvider theme={theme}>

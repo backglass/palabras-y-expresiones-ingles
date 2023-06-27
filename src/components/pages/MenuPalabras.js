@@ -16,6 +16,7 @@ function MenuPalabras() {
       <ButtonMenuApp lección={"Lección 5"} id={"5"} />
       <ButtonMenuApp lección={"Lección 6"} id={"6"} />
       <ButtonMenuApp lección={"Lección 7"} id={"7"} />
+      <ButtonMenuApp lección={"Lección 8"} id={"7"} />
 
       
     </div>
