@@ -35,7 +35,15 @@ const ExpresionCard = ({ id }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`https://185.117.44.54:8000/expresiones/leccion/${id}`); // Se hace una petición usando el id de la lección
+      // Si el valor de id es "all" se hace una petición para obtener todas las palabras
+      // Si el valor de id es un número se hace una petición para obtener las palabras del número de lección	
+      let url = "";
+      if (id === "all") {
+        url = `https://185.117.44.54:8000/expresiones/all`;
+      } else {
+        url = `https://185.117.44.54:8000/expresiones/leccion/${id}`;
+      }
+      const result = await axios.get(url); // Se hace una petición usando el id de la lección o "all"
       const nuevoDiccionario = {};
       result.data.forEach(item => {
         nuevoDiccionario[item.expresion] = item.significado;
@@ -45,7 +53,7 @@ const ExpresionCard = ({ id }) => {
     };
     fetchData();
   }, []); // Se usa un array vacío como segundo parámetro para que se ejecute sólo en el montaje del componente
-
+  
   const handleButtonClick = (data) => {
     if (data === expresion) {
       console.log("Correcto");
