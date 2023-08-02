@@ -60,6 +60,9 @@ function Expresiones() {
   if (expresion === "Expresión 6") {
     expresion = "6";
   }
+  if (expresion === "Expresión all") {
+    expresion = "all";
+  }
 
   console.log(expresion);
   return (
