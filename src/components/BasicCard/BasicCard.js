@@ -29,8 +29,20 @@ const BasicCard = ({id}) => {
   };
 
   useEffect(() => {
-    const url = `https://185.117.44.54:8000/palabras/leccion/${id}`;
+    // Si el parámetro es "all" se muestran todas las palabras sin importar la lección
+    // Si el parámetro es "1" se muestran las palabras de la lección 1
+    // Si el parámetro es "2" se muestran las palabras de la lección 2 y así sucesivamente
+    let url = "";
+    if (id === "all") {
+      url = "https://185.117.44.54:8000/palabras/all";
+     
+
+    } else {
+
+      url = `https://185.117.44.54:8000/palabras/leccion/${id}`;
+    }
     const dataObj = {};
+
 
     fetch(url, { rejectUnauthorized: false })
       .then(response => response.json())
