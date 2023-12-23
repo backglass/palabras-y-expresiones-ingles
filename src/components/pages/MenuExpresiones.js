@@ -11,14 +11,14 @@ function MenuPalabras() {
 
     <div>
 
+      <ButtonMenuExpresiones expresion={"Expresión all"} id={"all"} />
       <ButtonMenuExpresiones expresion={"Expresión 1"} id={"1"} />
       <ButtonMenuExpresiones expresion={"Expresión 2"} id={"2"} />
       <ButtonMenuExpresiones expresion={"Expresión 3"} id={"3"} />
       <ButtonMenuExpresiones expresion={"Expresión 4"} id={"4"} />
       <ButtonMenuExpresiones expresion={"Expresión 5"} id={"5"} />
       <ButtonMenuExpresiones expresion={"Expresión 6"} id={"6"} />
-      <ButtonMenuExpresiones expresion={"Expresión all"} id={"all"} />
-      
+      <ButtonMenuExpresiones expresion={"Expresión 7"} id={"7"} />
     </div>
 
       

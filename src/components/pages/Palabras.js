@@ -81,9 +81,17 @@ function Palabras() {
   if (leccion === "Lección 11") {
     leccion = "11";
   }
+  if (leccion === "Lección 12") {
+    leccion = "12";
+  }
+  if (leccion === "Lección 13") {
+    leccion = "13";
+  }
   if (leccion === "Lección all") {
     leccion = "all";
   }
+
+  
   
   return (
     <ThemeProvider theme={theme}>
