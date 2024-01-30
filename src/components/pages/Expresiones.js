@@ -63,6 +63,9 @@ function Expresiones() {
   if (expresion === "Expresión 7") {
     expresion = "7";
   }
+  if (expresion === "Expresión 8") {
+    expresion = "8";
+  }
   if (expresion === "Expresión all") {
     expresion = "all";
   }

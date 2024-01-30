@@ -19,6 +19,8 @@ function MenuPalabras() {
       <ButtonMenuExpresiones expresion={"Expresión 5"} id={"5"} />
       <ButtonMenuExpresiones expresion={"Expresión 6"} id={"6"} />
       <ButtonMenuExpresiones expresion={"Expresión 7"} id={"7"} />
+      <ButtonMenuExpresiones expresion={"Expresión 8"} id={"8"} />
+
     </div>
 
       
