@@ -90,6 +90,9 @@ function Palabras() {
   if (leccion === "Lección 14") {
     leccion = "14";
   }
+  if (leccion === "Lección 15") {
+    leccion = "15";
+  }
   if (leccion === "Lección all") {
     leccion = "all";
   }
