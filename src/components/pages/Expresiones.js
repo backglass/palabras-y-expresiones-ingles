@@ -78,6 +78,12 @@ function Expresiones() {
   if (expresion === "Expresión 12") {
     expresion = "12";
   }
+  if (expresion === "Expresión 13") {
+    expresion = "13";
+  }
+  if (expresion === "Expresión 14") {
+    expresion = "14";
+  }
   if (expresion === "Expresión all") {
     expresion = "all";
   }

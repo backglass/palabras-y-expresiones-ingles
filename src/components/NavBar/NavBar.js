@@ -31,7 +31,6 @@ const pages = ['Palabras', 'Expresiones', "Añadir-Palabra","Añadir-Expresion"]
 function NavBar() {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [selectedPage, setSelectedPage] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,19 +38,11 @@ function NavBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-
-    if (selectedPage !== null) {
-      navigate(selectedPage);
-      setSelectedPage(null);
-    }
   };
 
   const handleNavItemClick = (page) => {
-    setSelectedPage(page);
-
-    if (window.innerWidth <= 960) {
-      handleCloseNavMenu();
-    }
+    navigate(page);
+    handleCloseNavMenu();
   };
 
   return (
@@ -135,7 +126,7 @@ function NavBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={() => navigate(page)} 
+                onClick={() => handleNavItemClick(page)} 
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
