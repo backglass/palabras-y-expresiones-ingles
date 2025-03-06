@@ -105,6 +105,12 @@ function Palabras() {
   if (leccion === "Lección 19") {
     leccion = "19";
   }
+  if (leccion === "Lección 20") {
+    leccion = "20";
+  }
+  if (leccion === "Lección 21") {
+    leccion = "21";
+  }
   if (leccion === "Lección all") {
     leccion = "all";
   }
