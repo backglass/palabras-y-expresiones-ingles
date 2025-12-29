@@ -34,12 +34,12 @@ const BasicCard = ({id}) => {
     // Si el parámetro es "2" se muestran las palabras de la lección 2 y así sucesivamente
     let url = "";
     if (id === "all") {
-      url = "https://185.117.44.54:8000/palabras/all";
+      url = "https://185.117.46.78:8000/palabras/all";
      
 
     } else {
 
-      url = `https://185.117.44.54:8000/palabras/leccion/${id}`;
+      url = `https://185.117.46.78:8000/palabras/leccion/${id}`;
     }
     const dataObj = {};
 

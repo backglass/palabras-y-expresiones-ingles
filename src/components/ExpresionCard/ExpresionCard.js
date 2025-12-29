@@ -39,9 +39,9 @@ const ExpresionCard = ({ id }) => {
       // Si el valor de id es un número se hace una petición para obtener las palabras del número de lección	
       let url = "";
       if (id === "all") {
-        url = `https://185.117.44.54:8000/expresiones/all`;
+        url = `https://185.117.46.78:8000/expresiones/all`;
       } else {
-        url = `https://185.117.44.54:8000/expresiones/leccion/${id}`;
+        url = `https://185.117.46.78:8000/expresiones/leccion/${id}`;
       }
       const result = await axios.get(url); // Se hace una petición usando el id de la lección o "all"
       const nuevoDiccionario = {};
